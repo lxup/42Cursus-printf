@@ -1,65 +1,42 @@
-SRC = ft_atoi \
-			ft_bzero \
-			ft_calloc \
-			ft_isalnum \
-			ft_isalpha \
-			ft_isascii \
-			ft_isdigit \
-			ft_isprint \
-			ft_itoa \
-			ft_memchr \
-			ft_memcmp \
-			ft_memcpy \
-			ft_memmove \
-			ft_memset \
-			ft_putchar_fd \
-			ft_putendl_fd \
-			ft_putnbr_fd \
-			ft_putstr_fd \
-			ft_split \
-			ft_strchr \
-			ft_strdup \
-			ft_striteri \
-			ft_strjoin \
-			ft_strlcat \
-			ft_strlcpy \
-			ft_strlen \
-			ft_strmapi \
-			ft_strncmp \
-			ft_strnstr \
-			ft_strrchr \
-			ft_strtrim \
-			ft_substr \
-			ft_tolower \
-			ft_toupper \
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/11/07 19:15:54 by lquehec           #+#    #+#              #
+#    Updated: 2023/11/07 19:48:27 by lquehec          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-SRCS		= $(addsuffix .c, ${SRC})
+SRC = ft_printf.c \
+			ft_itoa.c \
+			ft_uitoa.c \
+			ft_put_hex.c \
+			ft_put_unsigned.c \
+			ft_putchar_fd.c \
+			ft_putnbr_fd.c \
+			ft_putstr_fd.c \
+
+SRCS_DIR = ./srcs/
+
+SRCS =		$(addprefix $(SRCS_DIR), $(SRC))
 
 OBJS		= ${SRCS:.c=.o}
-
-BONUS 		= ft_lstnew.c \
-				ft_lstadd_front.c \
-				ft_lstsize.c \
-				ft_lstlast.c \
-				ft_lstadd_back.c \
-				ft_lstdelone.c \
-				ft_lstclear.c \
-				ft_lstiter.c \
-				ft_lstmap.c \
-
-BONUS_OBJS	= $(BONUS:.c=.o)
 
 CC			= gcc
 RM			= rm -f
 AR			= ar rc
 RN			= ranlib
+HEADER_DIR	= ./includes/
 
 CFLAGS 		= -Wall -Wextra -Werror
 
 NAME		= libftprintf.a
 
 .c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+			${CC} ${CFLAGS} -I ${HEADER_DIR} -c $< -o ${<:.c=.o}
 
 $(NAME):	${OBJS}
 			${AR} ${NAME} ${OBJS}
@@ -68,18 +45,11 @@ $(NAME):	${OBJS}
 all:		$(NAME)
 
 clean:
-			${RM} ${OBJS} ${BONUS_OBJS}
+			${RM} ${OBJS}
 
 fclean:		clean
 			${RM} $(NAME)
 
 re:			fclean all
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJS)
-
-bonus:		$(BONUS_OBJS)
-			${AR} $(NAME) $(BONUS_OBJS)
-
-.PHONY:		all clean fclean re bonus
+.PHONY:		all clean fclean re
