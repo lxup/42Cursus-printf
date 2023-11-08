@@ -6,16 +6,16 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:46:00 by lquehec           #+#    #+#             */
-/*   Updated: 2023/11/07 19:52:19 by lquehec          ###   ########.fr       */
+/*   Updated: 2023/11/08 12:14:43 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char    *ft_uitoa(unsigned int n)
+char	*ft_uitoa(unsigned int n)
 {
 	char	*nbr;
-	size_t		len;
+	size_t	len;
 
 	len = ft_nbr_len(n);
 	nbr = (char *)malloc(sizeof(char) * (len + 1));

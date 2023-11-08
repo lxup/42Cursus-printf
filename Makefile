@@ -6,7 +6,7 @@
 #    By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 19:15:54 by lquehec           #+#    #+#              #
-#    Updated: 2023/11/07 19:48:27 by lquehec          ###   ########.fr        #
+#    Updated: 2023/11/08 11:46:24 by lquehec          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRC = ft_printf.c \
 			ft_putchar_fd.c \
 			ft_putnbr_fd.c \
 			ft_putstr_fd.c \
+			ft_put_uintptr.c \
 
 SRCS_DIR = ./srcs/
 

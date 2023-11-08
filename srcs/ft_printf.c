@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 22:40:51 by lquehec           #+#    #+#             */
-/*   Updated: 2023/11/07 19:32:54 by lquehec          ###   ########.fr       */
+/*   Updated: 2023/11/08 12:09:58 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	ft_format(va_list args, char c, size_t *str_len)
 		*str_len += ft_putchar_fd(va_arg(args, int), 1);
 	else if (c == 's')
 		*str_len += ft_putstr_fd(va_arg(args, char *), 1);
-	// else if (c == 'p')
-		// The void * pointer argument has to be printed in hexadecimal format
+	else if (c == 'p')
+		*str_len += ft_put_uintptr(va_arg(args, unsigned long long));
 	else if (c == 'd' || c == 'i')
 		*str_len += ft_putnbr_fd(va_arg(args, int), 1);
 	else if (c == 'u')
-		*str_len += ft_put_unsigned(va_arg(args, unsigned long long));
+		*str_len += ft_put_unsigned(va_arg(args, unsigned int));
 	else if (c == 'x' || c == 'X')
 		*str_len += ft_put_hex(va_arg(args, unsigned int), c);
 	else if (c == '%')
@@ -45,7 +45,9 @@ int	ft_printf(const char *str, ...)
 		{
 			ft_format(args, str[i + 1], &str_len);
 			i++;
-		} else {
+		}
+		else
+		{
 			ft_putchar_fd(str[i], 1);
 			str_len++;
 		}
@@ -53,7 +55,6 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (str_len);
-
 }
 
 // int	main(void)
@@ -63,7 +64,8 @@ int	ft_printf(const char *str, ...)
 // 	// printf("String: %s\nInt: %d\n", "salam", 59);
 // 	valuePrinted = 0;
 // 	ft_printf("*==========FT_PRINTF START==========*\n");
-// 	valuePrinted = ft_printf("String: %s\nInt: %d\nHexLow: %x\nHexUp: %X\n", "salam", 59, 123456789, 123456789);
+// 	valuePrinted = ft_printf("String: %s\nInt: %d\nHexLow: %x\nHexUp: %X\n",
+			// "salam", 59, 123456789, 123456789);
 // 	ft_printf("*==========FT_PRINTF END==========*\n");
 // 	printf("Value printed: %i", valuePrinted);
 // 	return (0);
