@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:09:59 by lquehec           #+#    #+#             */
-/*   Updated: 2023/11/08 12:09:48 by lquehec          ###   ########.fr       */
+/*   Updated: 2023/11/15 16:48:51 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 # include <stdio.h>
 
-int		ft_printf(const char *, ...);
+int		ft_printf(const char *str, ...);
 char	*ft_itoa(int n);
 char	*ft_uitoa(unsigned int n);
 size_t	ft_put_uintptr(unsigned long long ptr);
