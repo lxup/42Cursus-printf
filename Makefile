@@ -6,7 +6,7 @@
 #    By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 19:15:54 by lquehec           #+#    #+#              #
-#    Updated: 2023/11/08 11:46:24 by lquehec          ###   ########.fr        #
+#    Updated: 2023/11/15 15:33:39 by lquehec          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRCS =		$(addprefix $(SRCS_DIR), $(SRC))
 
 OBJS		= ${SRCS:.c=.o}
 
-CC			= gcc
+CC			= cc
 RM			= rm -f
 AR			= ar rc
 RN			= ranlib

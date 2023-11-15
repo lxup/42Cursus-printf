@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 22:40:51 by lquehec           #+#    #+#             */
-/*   Updated: 2023/11/08 12:09:58 by lquehec          ###   ########.fr       */
+/*   Updated: 2023/11/15 15:31:59 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,3 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (str_len);
 }
-
-// int	main(void)
-// {
-// 	int	valuePrinted;
-// 	// printf("*==========PRINTF==========*");
-// 	// printf("String: %s\nInt: %d\n", "salam", 59);
-// 	valuePrinted = 0;
-// 	ft_printf("*==========FT_PRINTF START==========*\n");
-// 	valuePrinted = ft_printf("String: %s\nInt: %d\nHexLow: %x\nHexUp: %X\n",
-			// "salam", 59, 123456789, 123456789);
-// 	ft_printf("*==========FT_PRINTF END==========*\n");
-// 	printf("Value printed: %i", valuePrinted);
-// 	return (0);
-// }
