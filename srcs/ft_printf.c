@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 22:40:51 by lquehec           #+#    #+#             */
-/*   Updated: 2023/11/15 15:31:59 by lquehec          ###   ########.fr       */
+/*   Updated: 2023/11/20 17:09:44 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	ft_printf(const char *str, ...)
 	size_t	i;
 	size_t	str_len;
 
+	if (!str)
+		return (-1);
 	i = 0;
 	str_len = 0;
 	va_start(args, str);
@@ -55,4 +57,14 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (str_len);
+}
+
+int	main(void)
+{
+	#include <stdio.h>
+
+	ft_printf("FT_PRINTF\n");
+	ft_printf("%s\n", "OKAY");
+	ft_printf("PRINTF\n");
+	printf("%s\n", "OKAY");
 }
