@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:09:38 by lquehec           #+#    #+#             */
-/*   Updated: 2023/11/08 12:13:35 by lquehec          ###   ########.fr       */
+/*   Updated: 2023/12/04 21:16:25 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ size_t	ft_putstr_fd(char *s, int fd)
 
 	i = 0;
 	if (s == NULL)
-	{
-		ft_putstr_fd("(null)", 1);
-		return (6);
-	}
+		return (ft_putstr_fd("(null)", 1));
 	while (s && s[i])
 	{
 		ft_putchar_fd(s[i], fd);
