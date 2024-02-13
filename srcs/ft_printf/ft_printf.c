@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 22:40:51 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/13 02:09:57 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/13 02:30:05 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	ft_format(va_list args, char c, size_t *str_len)
 {
 	if (c == 'c')
-		*str_len += ft_putchar_fd(va_arg(args, int), 1);
+		*str_len += ft_put_char_to_fd(va_arg(args, int), 1);
 	else if (c == 's')
-		*str_len += ft_putstr_fd(va_arg(args, char *), 1);
+		*str_len += ft_put_str_to_fd(va_arg(args, char *), 1);
 	else if (c == 'p')
 		*str_len += ft_put_uintptr(va_arg(args, unsigned long long));
 	else if (c == 'd' || c == 'i')
@@ -27,7 +27,7 @@ void	ft_format(va_list args, char c, size_t *str_len)
 	else if (c == 'x' || c == 'X')
 		*str_len += ft_put_hex(va_arg(args, unsigned int), c);
 	else if (c == '%')
-		*str_len += ft_putchar_fd('%', 1);
+		*str_len += ft_put_char_to_fd('%', 1);
 }
 
 int	ft_printf(const char *str, ...)
@@ -50,7 +50,7 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 		{
-			ft_putchar_fd(str[i], 1);
+			ft_put_char_to_fd(str[i], 1);
 			str_len++;
 		}
 		i++;

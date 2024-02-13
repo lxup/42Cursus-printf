@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:09:24 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/13 01:40:45 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/13 02:29:36 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	ft_put_hex_lower(unsigned int nbr)
 	else
 	{
 		if (nbr <= 9)
-			ft_putchar_fd(nbr + '0', 2);
+			ft_put_char_to_fd(nbr + '0', 2);
 		else
-			ft_putchar_fd(nbr - 10 + 'a', 2);
+			ft_put_char_to_fd(nbr - 10 + 'a', 2);
 	}
 }
 
@@ -51,16 +51,16 @@ void	ft_put_hex_upper(unsigned int nbr)
 	else
 	{
 		if (nbr <= 9)
-			ft_putchar_fd(nbr + '0', 2);
+			ft_put_char_to_fd(nbr + '0', 2);
 		else
-			ft_putchar_fd(nbr - 10 + 'A', 2);
+			ft_put_char_to_fd(nbr - 10 + 'A', 2);
 	}
 }
 
 size_t	ft_dput_hex(unsigned int nbr, char format)
 {
 	if (nbr == 0)
-		return (ft_putchar_fd('0', 2));
+		return (ft_put_char_to_fd('0', 2));
 	if (format == 'x')
 		ft_put_hex_lower(nbr);
 	else if (format == 'X')

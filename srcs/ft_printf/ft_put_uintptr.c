@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:44:47 by lquehec           #+#    #+#             */
-/*   Updated: 2023/11/08 12:16:47 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/13 02:30:05 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	ft_put_uintptr_hex(unsigned long long nbr)
 	else
 	{
 		if (nbr <= 9)
-			ft_putchar_fd(nbr + '0', 1);
+			ft_put_char_to_fd(nbr + '0', 1);
 		else
-			ft_putchar_fd(nbr - 10 + 'a', 1);
+			ft_put_char_to_fd(nbr - 10 + 'a', 1);
 	}
 }
 
@@ -46,8 +46,8 @@ size_t	ft_put_uintptr(unsigned long long ptr)
 	size_t	len;
 
 	if (ptr == 0)
-		return (ft_putstr_fd("(nil)", 1));
-	len = ft_putstr_fd("0x", 1);
+		return (ft_put_str_to_fd("(nil)", 1));
+	len = ft_put_str_to_fd("0x", 1);
 	ft_put_uintptr_hex(ptr);
 	len += ft_uintptr_len(ptr);
 	return (len);

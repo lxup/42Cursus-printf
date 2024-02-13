@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 22:40:51 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/13 01:39:42 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/13 02:30:05 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 static void	ft_format(va_list args, char c, size_t *str_len)
 {
 	if (c == 'c')
-		*str_len += ft_putchar_fd(va_arg(args, int), 2);
+		*str_len += ft_put_char_to_fd(va_arg(args, int), 2);
 	else if (c == 's')
-		*str_len += ft_putstr_fd(va_arg(args, char *), 2);
+		*str_len += ft_put_str_to_fd(va_arg(args, char *), 2);
 	else if (c == 'p')
 		*str_len += ft_dput_uintptr(va_arg(args, unsigned long long));
 	else if (c == 'd' || c == 'i')
@@ -27,7 +27,7 @@ static void	ft_format(va_list args, char c, size_t *str_len)
 	else if (c == 'x' || c == 'X')
 		*str_len += ft_dput_hex(va_arg(args, unsigned int), c);
 	else if (c == '%')
-		*str_len += ft_putchar_fd('%', 2);
+		*str_len += ft_put_char_to_fd('%', 2);
 }
 
 int	ft_dprintf(const char *str, ...)
@@ -50,7 +50,7 @@ int	ft_dprintf(const char *str, ...)
 		}
 		else
 		{
-			ft_putchar_fd(str[i], 1);
+			ft_put_char_to_fd(str[i], 1);
 			str_len++;
 		}
 		i++;

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_put_char_to_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:09:31 by lquehec           #+#    #+#             */
-/*   Updated: 2023/11/08 12:10:41 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/13 02:28:19 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_putchar_fd(char c, int fd)
+size_t	ft_put_char_to_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 	return (1);

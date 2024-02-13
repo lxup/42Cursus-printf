@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:09:59 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/13 01:37:04 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/13 02:30:05 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int		ft_printf(const char *str, ...);
 char	*ft_itoa(int n);
 char	*ft_uitoa(unsigned int n);
 size_t	ft_put_uintptr(unsigned long long ptr);
-size_t	ft_putchar_fd(char c, int fd);
-size_t	ft_putstr_fd(char *s, int fd);
+size_t	ft_put_char_to_fd(char c, int fd);
+size_t	ft_put_str_to_fd(char *s, int fd);
 size_t	ft_putnbr_fd(int n, int fd);
 size_t	ft_nbr_len(unsigned int nbr);
 size_t	ft_hex_len(unsigned int nbr);

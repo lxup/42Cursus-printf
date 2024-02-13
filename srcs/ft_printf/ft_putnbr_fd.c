@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:09:35 by lquehec           #+#    #+#             */
-/*   Updated: 2023/11/08 12:11:19 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/13 02:30:05 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ size_t	ft_putnbr_fd(int n, int fd)
 	char	*nbr;
 
 	nbr = ft_itoa(n);
-	len = ft_putstr_fd(nbr, fd);
+	len = ft_put_str_to_fd(nbr, fd);
 	free(nbr);
 	return (len);
 }
