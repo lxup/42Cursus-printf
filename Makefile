@@ -6,7 +6,7 @@
 #    By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 19:15:54 by lquehec           #+#    #+#              #
-#    Updated: 2024/02/13 01:43:25 by lquehec          ###   ########.fr        #
+#    Updated: 2024/02/13 02:11:10 by lquehec          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,7 +109,6 @@ OBJS		= ${SRCS:.c=.o}
 all:		$(NAME)
 
 .c.o:
-			@printf "$(BLUE)> Compiling printf objects... %-33.33s\r$(END)" $@
 			@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 $(NAME):	${OBJS}
